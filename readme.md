@@ -1,6 +1,6 @@
 # Task Manager
 
-This project is meant to be learn the backend, so the front end of this applications are given by the the workshop instructor [John Smilga](https://www.johnsmilga.com/)
+This project is meant to learn the backend, so the front end of this applications are given by the the workshop instructor [John Smilga](https://www.johnsmilga.com/)
 
 ## Tech Stack
 
