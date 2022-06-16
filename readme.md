@@ -17,3 +17,5 @@ This project is meant to be learn the backend, so the front end of this applicat
 ## Acknowledgements
 
 - [Readme.so ](https://readme.so/) : The essiest way to create a readme.
+- [Freecodecamp](https://www.freecodecamp.org/)
+- [John Smilga](https://www.johnsmilga.com/) : Instructor
