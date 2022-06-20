@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from 'dotenv';
 import tasksRouter from './routes/tasks.js'
+import * as connectDB from './db/connect.js'
 dotenv.config()
 const App = express()
 
