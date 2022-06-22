@@ -1,19 +1,27 @@
 import express from "express";
 import dotenv from 'dotenv';
 import tasksRouter from './routes/tasks.js'
-import * as connectDB from './db/connect.js'
+import connectDB from './db/connect.js'
 dotenv.config()
 const App = express()
+const PORT = process.env.PORT || 5000
 
 // middleware 
 
 App.use(express.json())
-
-const PORT = process.env.PORT || 5000
-App.get('/', (req, res) => {
-    res.end("Hola estoy escuchando")
-})
 App.use('/api/v1/tasks', tasksRouter)
-App.listen(PORT, () => {
-    console.log(`Servidor levantado en el puerto ${PORT}`)
-})
+
+
+const start = async () => {
+    try {
+
+        await connectDB(process.env.MONGODB_URL)
+        App.listen(PORT, () => {
+            console.log(`Servidor levantado en el puerto ${PORT}`)
+        })
+    } catch (error) {
+        console.log("Error in the start function ", error)
+    }
+}
+
+start();
