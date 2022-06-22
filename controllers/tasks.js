@@ -4,9 +4,13 @@ const getAllTasks = (req, res) => {
     res.send("All task from the controller")
 }
 const createNewTask = async (req, res) => {
-    const taskCreated = await taskModel.create(req.body)
-    console.log(req.body)
-    res.status(201).json({ taskCreated })
+    try {
+        const taskCreated = await taskModel.create(req.body)
+        res.status(201).json({ taskCreated })
+
+    } catch (error) {
+        res.status(500).json({ "error": error })
+    }
 }
 const getSingleTask = (req, res) => {
     const idParam = req.params.id
