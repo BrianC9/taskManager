@@ -1,12 +1,12 @@
-
+import taskModel from "../models/task.js"
 
 const getAllTasks = (req, res) => {
     res.send("All task from the controller")
 }
-const createNewTask = (req, res) => {
-
+const createNewTask = async (req, res) => {
+    const taskCreated = await taskModel.create(req.body)
     console.log(req.body)
-    res.send("Create new task")
+    res.status(201).json({ taskCreated })
 }
 const getSingleTask = (req, res) => {
     const idParam = req.params.id

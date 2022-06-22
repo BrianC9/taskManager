@@ -1,8 +1,11 @@
 import mongoose from 'mongoose';
 
 const taskSchema = new mongoose.Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true
+    },
     completed: Boolean
 })
-const taskModel = mongoose.model('Task'.taskSchema)
+const taskModel = mongoose.model('Task', taskSchema)
 export default taskModel;
