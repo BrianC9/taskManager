@@ -4,8 +4,10 @@ const getAllTasks = async (req, res) => {
     try {
         const tasks = await taskModel.find({});
         res.status(200).json({ tasks })
+        //res.status(200).json({ tasks,ammount:tasks.length}) // Better for pagination E.g
+        //res.status(200).json({success:true,data:{tasks,nbHits:tasks.length}}) -> Redundant for the front-end
     } catch (error) {
-        res.status(500).json({ "error getting all tasks": error })
+        res.status(500).json({ success: false, "error getting all tasks": error })
     }
 }
 const createNewTask = async (req, res) => {
