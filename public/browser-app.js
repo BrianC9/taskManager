@@ -77,8 +77,18 @@ formDOM.addEventListener('submit', async (e) => {
     formAlertDOM.textContent = `success, task added`
     formAlertDOM.classList.add('text-success')
   } catch (error) {
-    formAlertDOM.style.display = 'block'
-    formAlertDOM.innerHTML = `error, please try again`
+    if (taskInputDOM.value.trim() === '') {
+
+      formAlertDOM.style.display = 'block'
+      formAlertDOM.textContent = `Fail, text empty`
+      formAlertDOM.classList.add('text-danger')
+      setTimeout(() => {
+        formAlertDOM.style.display = 'none'
+        formAlertDOM.classList.remove('text-danger')
+      }, 3000)
+
+    }
+
   }
   setTimeout(() => {
     formAlertDOM.style.display = 'none'

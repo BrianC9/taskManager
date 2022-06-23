@@ -6,7 +6,7 @@ This project is meant to learn the backend, so the front end of this application
 
 **Front end:** HTML, CSS, JS
 
-**Server:** Node, Express
+**Server:** Node, Express, Postman
 
 ## Challenges and goals of this project
 

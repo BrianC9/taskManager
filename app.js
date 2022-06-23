@@ -7,7 +7,7 @@ const App = express()
 const PORT = process.env.PORT || 5000
 
 // middleware 
-
+App.use(express.static('./public'))
 App.use(express.json())
 App.use('/api/v1/tasks', tasksRouter)
 
