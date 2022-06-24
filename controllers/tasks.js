@@ -49,7 +49,7 @@ const updateTask = asyncWrapper(async (req, res) => {
 
 })
 const deleteTask = asyncWrapper(async (req, res) => {
-    const idParam = req.params.id
+    const taskID = req.params.id
     const task = await taskModel.findOneAndDelete({ _id: taskID })
     if (!task) {
         return next(createCustomError(`No task with id: ${taskID} was found`, 404))
